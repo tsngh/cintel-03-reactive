@@ -99,4 +99,5 @@ with ui.card(full_screen=True):
 
 @reactive.calc
 def filtered_data():
-    return penguins_df
+    selected_species = input.selected_species_list()
+    return penguins_df[penguins_df["species"].isin(selected_species)]
